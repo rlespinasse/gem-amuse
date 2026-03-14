@@ -1,0 +1,6 @@
+node_modules/
+
+# Generated favicon variants (source: site/favicon.svg)
+site/favicon.ico
+site/favicon-*.png
+site/apple-touch-icon.png

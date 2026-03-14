@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "le-petit-coloriste",
+  "description": "Le Petit Coloriste — Une Gem Google Gemini pour générer des pages de coloriage par IA pour les enfants",
+  "scripts": {
+    "dev": "browser-sync start --server site --serveStatic site --files 'site/**/*' --no-notify --index 404.html",
+    "lint:html": "htmlhint site/**/*.html",
+    "lint:css": "stylelint site/**/*.css",
+    "lint:js": "eslint site/**/*.js",
+    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js && npm run lint:md",
+    "generate:favicons": "node scripts/generate-favicons.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0",
+    "browser-sync": "^3.0.0",
+    "htmlhint": "^1.1.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "eslint": "^9.0.0",
+    "markdownlint-cli2": "^0.17.0"
+  }
+}

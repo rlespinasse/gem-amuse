@@ -1,0 +1,7 @@
+{
+  "config": {
+    "default": true,
+    // Allow long lines in tables and links
+    "MD013": false
+  }
+}
