@@ -28,6 +28,10 @@ lint-js:
 lint-md:
     npm run lint:md
 
+# Corriger automatiquement les erreurs de lint (CSS, JS, Markdown)
+lint-fix:
+    npm run lint:fix
+
 # Générer les variantes de favicon depuis le SVG
 generate-favicons:
     npm run generate:favicons

@@ -7,9 +7,13 @@
     "dev": "browser-sync start --server site --serveStatic site --files 'site/**/*' --no-notify --index 404.html",
     "lint:html": "htmlhint site/**/*.html",
     "lint:css": "stylelint site/**/*.css",
+    "lint:css:fix": "stylelint site/**/*.css --fix",
     "lint:js": "eslint site/**/*.js",
+    "lint:js:fix": "eslint site/**/*.js --fix",
     "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "lint:md:fix": "markdownlint-cli2 '**/*.md' '#node_modules' --fix",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js && npm run lint:md",
+    "lint:fix": "npm run lint:css:fix && npm run lint:js:fix && npm run lint:md:fix",
     "generate:favicons": "node scripts/generate-favicons.js"
   },
   "devDependencies": {
