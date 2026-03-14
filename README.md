@@ -1,6 +1,6 @@
 # Le Petit Coloriste
 
-Une Gem Google Gemini qui transforme de simples descriptions en pages de coloriage prêtes à imprimer pour les jeunes enfants (dès 5 ans).
+Une [Gem](https://gemini.google.com) Google Gemini (assistant personnalisé) qui transforme de simples descriptions en pages de coloriage prêtes à imprimer pour les jeunes enfants (dès 5 ans). Un compte Google gratuit est nécessaire pour y accéder.
 
 [Essayer la Gem](https://gemini.google.com/gem/b2004aa806f7?usp=sharing)
 
