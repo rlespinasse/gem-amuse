@@ -2,6 +2,8 @@
   "config": {
     "default": true,
     // Allow long lines in tables and links
-    "MD013": false
+    "MD013": false,
+    // Disable table column alignment check (not auto-fixable)
+    "MD060": false
   }
 }

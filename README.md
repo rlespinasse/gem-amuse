@@ -39,17 +39,18 @@ just dev       # Lancer le serveur local avec rechargement automatique
 
 ### Commandes disponibles
 
-| Commande                 | Description                                        |
-| ------------------------ | -------------------------------------------------- |
-| `just install`           | Installer les outils et les dépendances npm        |
+| Commande                 | Description                                         |
+| ------------------------ | --------------------------------------------------- |
+| `just install`           | Installer les outils et les dépendances npm         |
 | `just dev`               | Servir le site en local avec rechargement auto      |
-| `just lint`              | Lancer tous les linters (HTML, CSS, JS, Markdown)  |
-| `just lint-html`         | Linter les fichiers HTML uniquement                |
-| `just lint-css`          | Linter les fichiers CSS uniquement                 |
-| `just lint-js`           | Linter les fichiers JS uniquement                  |
-| `just lint-md`           | Linter les fichiers Markdown uniquement            |
-| `just generate-favicons` | Générer les variantes de favicon depuis le SVG     |
-| `just ci`                | Lancer toutes les vérifications CI                 |
+| `just lint`              | Lancer tous les linters (HTML, CSS, JS, Markdown)   |
+| `just lint-fix`          | Corriger automatiquement les erreurs de lint        |
+| `just lint-html`         | Linter les fichiers HTML uniquement                 |
+| `just lint-css`          | Linter les fichiers CSS uniquement                  |
+| `just lint-js`           | Linter les fichiers JS uniquement                   |
+| `just lint-md`           | Linter les fichiers Markdown uniquement             |
+| `just generate-favicons` | Générer les variantes de favicon depuis le SVG      |
+| `just ci`                | Lancer toutes les vérifications CI                  |
 
 ### Structure du projet
 
