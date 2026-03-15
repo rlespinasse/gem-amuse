@@ -28,8 +28,8 @@ document.addEventListener('click', function (e) {
   if (link) {
     trackEvent('/le-petit-coloriste/gem-click');
     if (isMobile()) {
-      e.preventDefault();
-      window.location.href = link.href;
+      link.removeAttribute('target');
+      trackEvent('/le-petit-coloriste/gem-click-mobile');
     }
   }
 });
