@@ -15,6 +15,10 @@ function closeModal(id) {
   document.getElementById(id).classList.remove('active');
 }
 
+function isMobile() {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('modal-overlay')) {
     e.target.classList.remove('active');
@@ -23,6 +27,10 @@ document.addEventListener('click', function (e) {
   var link = e.target.closest('a.cta-btn');
   if (link) {
     trackEvent('/le-petit-coloriste/gem-click');
+    if (isMobile()) {
+      e.preventDefault();
+      window.location.href = link.href;
+    }
   }
 });
 
