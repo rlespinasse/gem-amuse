@@ -19,10 +19,6 @@ Les coloriages sont générés par Google Gemini avec le modèle de génération
 
 Pour découvrir comment créer votre premier coloriage en 3 étapes, rendez-vous directement sur le site : [lepetitcoloriste.rlespinasse.io](https://lepetitcoloriste.rlespinasse.io/).
 
-## Pourquoi 404.html ?
-
-Le site est hébergé sur GitHub Pages et utilise une architecture mono-page. GitHub Pages sert `404.html` comme page de secours pour toutes les routes, ce qui en fait le point d'entrée effectif. Cela évite d'avoir un `index.html` séparé et une configuration de routage.
-
 ## Développement
 
 ### Prérequis
@@ -50,27 +46,37 @@ just dev       # Lancer le serveur local avec rechargement automatique
 | `just lint-js`           | Linter les fichiers JS uniquement                   |
 | `just lint-md`           | Linter les fichiers Markdown uniquement             |
 | `just generate-favicons` | Générer les variantes de favicon depuis le SVG      |
+| `just update-gem <id>`   | Mettre à jour l'ID de la Gem dans tous les fichiers |
+| `just check-gem`         | Vérifier la cohérence et l'accessibilité de la Gem  |
 | `just ci`                | Lancer toutes les vérifications CI                  |
 
 ### Structure du projet
 
 ```text
 site/               # Site statique servi par GitHub Pages
-  404.html           # Page d'accueil principale
+  404.html           # Redirection vers index.html
+  index.html         # Page d'accueil principale
   app.js             # Gestion des modales et analytics
   style.css          # Styles
   favicon.svg        # Logo SVG (source pour la génération des favicons)
-  site.webmanifest   # Manifeste PWA
+  site.webmanifest   # Manifeste d'application web
   exemples/          # Images d'exemples de coloriages
-scripts/             # Scripts de build
+scripts/             # Scripts de build et maintenance
   generate-favicons.js
+  update-gem-url.js  # Mise à jour de l'URL de la Gem
+  check-gem-url.js   # Vérification de l'URL de la Gem
+gem.json             # Source de vérité pour l'ID et l'URL de la Gem
 ```
+
+### Pourquoi 404.html ?
+
+Le site est hébergé sur GitHub Pages et utilise une architecture mono-page. GitHub Pages sert `404.html` comme page de secours pour toutes les routes, qui redirige vers `index.html` où se trouve le contenu réel du site.
 
 ## Déploiement
 
-Le site est automatiquement déployé sur GitHub Pages à chaque push sur `main` via le [workflow de déploiement](.github/workflows/deploy.yml). Le répertoire `site/` est publié tel quel.
+Le site est automatiquement déployé sur GitHub Pages après chaque release via le [workflow de déploiement](.github/workflows/deploy.yml). Le répertoire `site/` est publié tel quel.
 
-Les pull requests sont vérifiées par le [workflow CI](.github/workflows/ci.yml), qui lance tous les linters.
+Les pull requests sont vérifiées par le [workflow CI](.github/workflows/ci.yml), qui lance les linters et vérifie la cohérence et l'accessibilité de l'URL de la Gem.
 
 ## Licence
 
