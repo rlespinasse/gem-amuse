@@ -48,6 +48,24 @@ Si vous modifiez `site/favicon.svg`, regénérez toutes les variantes :
 just generate-favicons
 ```
 
+## Mettre à jour l'URL de la Gem
+
+L'URL de la Gem est définie dans `gem.json` et référencée dans `site/index.html` et `README.md`. Pour mettre à jour l'ID de la Gem :
+
+```sh
+just update-gem <nouvel-id>
+```
+
+Cette commande remplace l'ancienne URL par la nouvelle dans tous les fichiers concernés.
+
+Pour vérifier que l'URL est cohérente et accessible :
+
+```sh
+just check-gem
+```
+
+Cette vérification est aussi exécutée automatiquement en CI.
+
 ## Des questions ?
 
 Ouvrez une [issue](https://github.com/rlespinasse/le-petit-coloriste/issues) sur GitHub.

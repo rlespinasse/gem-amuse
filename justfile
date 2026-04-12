@@ -36,5 +36,13 @@ lint-fix:
 generate-favicons:
     npm run generate:favicons
 
+# Mettre a jour l'ID de la Gem
+update-gem gem_id:
+    npm run update:gem -- {{gem_id}}
+
+# Verifier que l'URL de la Gem est accessible et coherente
+check-gem:
+    npm run check:gem
+
 # Valider une pull request (toutes les vérifications)
-ci: lint
+ci: lint check-gem

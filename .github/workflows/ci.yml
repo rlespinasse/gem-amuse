@@ -14,3 +14,4 @@ jobs:
       - uses: jdx/mise-action@c1ecc8f748cd28cdeabf76dab3cccde4ce692fe4 # v4.0.0
       - run: npm ci
       - run: just lint
+      - run: just check-gem
