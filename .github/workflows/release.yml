@@ -23,7 +23,7 @@ jobs:
         uses: cocogitto/cocogitto-action@52d0023b4396897f1815648e553db2ab8d782f3a # v4.2.0
         with:
           command: bump
-          args: --auto
+          args: --auto --from-latest-tag
           git-user: "github-actions[bot]"
           git-user-email: "github-actions[bot]@users.noreply.github.com"
 
