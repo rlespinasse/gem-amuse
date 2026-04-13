@@ -27,8 +27,8 @@ jobs:
           git-user: "github-actions[bot]"
           git-user-email: "github-actions[bot]@users.noreply.github.com"
 
-      - name: Push tag
-        run: git push origin "${{ steps.release.outputs.version }}"
+      - name: Push release
+        run: git push origin HEAD:main "${{ steps.release.outputs.version }}"
 
       - name: Create GitHub release
         env:
