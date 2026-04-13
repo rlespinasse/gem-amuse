@@ -7,7 +7,7 @@ function trackEvent(path) {
 function openModal(id) {
   document.getElementById(id).classList.add('active');
   if (id === 'modal-legal') {
-    trackEvent('/le-petit-coloriste/modal-legal');
+    trackEvent('/gem-amuse/modal-legal');
   }
 }
 
@@ -24,9 +24,9 @@ document.addEventListener('click', function (e) {
     e.target.classList.remove('active');
   }
 
-  var link = e.target.closest('a.cta-btn');
+  var link = e.target.closest('a.cta-btn[data-gem]');
   if (link) {
-    trackEvent('/le-petit-coloriste/gem-click');
+    trackEvent('/gem-amuse/' + link.dataset.gem + '/gem-click');
     if (isMobile()) {
       link.removeAttribute('target');
       trackEvent('/le-petit-coloriste/gem-click-mobile');

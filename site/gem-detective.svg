@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Handle (outline then fill) -->
+  <line x1="64" y1="64" x2="89" y2="89" stroke="#2D2D2D" stroke-width="16" stroke-linecap="round"/>
+  <line x1="64" y1="64" x2="89" y2="89" stroke="#FFD4A3" stroke-width="10" stroke-linecap="round"/>
+  <!-- Lens -->
+  <circle cx="40" cy="40" r="32" fill="white" stroke="#2D2D2D" stroke-width="5"/>
+  <!-- Clue dots inside lens -->
+  <circle cx="38" cy="46" r="4.5" fill="#D8B4FE" stroke="#2D2D2D" stroke-width="2"/>
+  <circle cx="47" cy="38" r="3.5" fill="#FFB6C1" stroke="#2D2D2D" stroke-width="1.5"/>
+  <circle cx="32" cy="35" r="2.5" fill="#FFD4A3" stroke="#2D2D2D" stroke-width="1.5"/>
+  <!-- Glare -->
+  <circle cx="29" cy="29" r="6" fill="white" opacity="0.55"/>
+</svg>
