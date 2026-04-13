@@ -29,7 +29,7 @@ document.addEventListener('click', function (e) {
     trackEvent('/gem-amuse/' + link.dataset.gem + '/gem-click');
     if (isMobile()) {
       link.removeAttribute('target');
-      trackEvent('/le-petit-coloriste/gem-click-mobile');
+      trackEvent('/gem-amuse/gem-click-mobile');
     }
   }
 });

@@ -68,4 +68,4 @@ Cette vérification est aussi exécutée automatiquement en CI.
 
 ## Des questions ?
 
-Ouvrez une [issue](https://github.com/rlespinasse/le-petit-coloriste/issues) sur GitHub.
+Ouvrez une [issue](https://github.com/rlespinasse/gem-amuse/issues) sur GitHub.
