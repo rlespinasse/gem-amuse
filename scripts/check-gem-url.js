@@ -6,49 +6,56 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, '..');
 
 const gemJsonPath = resolve(rootDir, 'gem.json');
-const gem = JSON.parse(readFileSync(gemJsonPath, 'utf8'));
-const gemUrl = gem.gemUrl;
+const { gems } = JSON.parse(readFileSync(gemJsonPath, 'utf8'));
 
-console.log(`Gem URL: ${gemUrl}\n`);
+const indexHtml = readFileSync(resolve(rootDir, 'site/index.html'), 'utf8');
+const readme = readFileSync(resolve(rootDir, 'README.md'), 'utf8');
 
-// --- Consistency check ---
-const expectedCounts = [
-  { file: 'site/index.html', expected: 2 },
-  { file: 'README.md', expected: 1 },
-];
+let allOk = true;
 
-let consistencyOk = true;
-for (const { file, expected } of expectedCounts) {
-  const content = readFileSync(resolve(rootDir, file), 'utf8');
-  const actual = content.split(gemUrl).length - 1;
-  if (actual !== expected) {
-    console.error(`FAIL  ${file}: expected ${expected} occurrence(s), found ${actual}`);
-    consistencyOk = false;
+for (const gem of gems) {
+  const { name, gemUrl } = gem;
+  console.log(`\n${name}`);
+  console.log(`  URL: ${gemUrl}`);
+
+  // Consistency: each gem URL appears once in index.html
+  const htmlCount = indexHtml.split(gemUrl).length - 1;
+  if (htmlCount !== 1) {
+    console.error(`  FAIL  site/index.html: expected 1 occurrence, found ${htmlCount}`);
+    allOk = false;
   } else {
-    console.log(`OK    ${file}: ${actual} occurrence(s)`);
+    console.log(`  OK    site/index.html: ${htmlCount} occurrence(s)`);
+  }
+
+  // Reachability
+  try {
+    const response = await fetch(gemUrl, { method: 'HEAD', redirect: 'manual' });
+    if (response.status >= 400) {
+      console.error(`  FAIL  Reachability: HTTP ${response.status}`);
+      allOk = false;
+    } else {
+      console.log(`  OK    Reachability: HTTP ${response.status}`);
+    }
+  } catch (err) {
+    console.error(`  FAIL  Reachability: ${err.message}`);
+    allOk = false;
   }
 }
 
-// --- Reachability check ---
-let reachabilityOk = true;
-try {
-  const response = await fetch(gemUrl, { method: 'HEAD', redirect: 'manual' });
-  if (response.status >= 400) {
-    console.error(`FAIL  Reachability: HTTP ${response.status}`);
-    reachabilityOk = false;
+// README: all gem URLs should appear at least once
+console.log('\nREADME.md');
+for (const gem of gems) {
+  const count = readme.split(gem.gemUrl).length - 1;
+  if (count < 1) {
+    console.warn(`  WARN  ${gem.name}: not found in README.md`);
   } else {
-    console.log(`OK    Reachability: HTTP ${response.status}`);
+    console.log(`  OK    ${gem.name}: ${count} occurrence(s)`);
   }
-} catch (err) {
-  console.error(`FAIL  Reachability: ${err.message}`);
-  reachabilityOk = false;
 }
 
-// --- Result ---
 console.log('');
-if (!consistencyOk || !reachabilityOk) {
-  if (!consistencyOk) console.error('Consistency check failed.');
-  if (!reachabilityOk) console.error('Reachability check failed.');
+if (!allOk) {
+  console.error('One or more checks failed.');
   process.exit(1);
 }
 console.log('All checks passed.');

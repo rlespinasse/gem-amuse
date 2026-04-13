@@ -1,6 +1,6 @@
 {
-  "name": "Le petit coloriste",
-  "short_name": "Coloriste",
+  "name": "Gem'Amuse",
+  "short_name": "GemAmuse",
   "icons": [
     { "src": "favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "favicon-512x512.png", "sizes": "512x512", "type": "image/png" }

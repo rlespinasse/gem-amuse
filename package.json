@@ -1,8 +1,8 @@
 {
   "private": true,
   "type": "module",
-  "name": "le-petit-coloriste",
-  "description": "Le Petit Coloriste — Une Gem Google Gemini pour générer des pages de coloriage par IA pour les enfants",
+  "name": "gem-amuse",
+  "description": "Gem'Amuse — Des Gems Google Gemini créées pour les enfants : coloriages, science, défis rigolos et chasses aux trésors",
   "scripts": {
     "dev": "browser-sync start --server site --serveStatic site --files 'site/**/*' --no-notify --index 404.html",
     "lint:html": "htmlhint site/**/*.html",

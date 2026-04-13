@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Flask body (trapezoid) -->
+  <polygon points="38,36 62,36 82,90 18,90" fill="white" stroke="#2D2D2D" stroke-width="4.5" stroke-linejoin="round"/>
+  <!-- Liquid -->
+  <polygon points="26,68 74,68 82,90 18,90" fill="#87CEEB"/>
+  <!-- Liquid surface -->
+  <line x1="26" y1="68" x2="74" y2="68" stroke="#2D2D2D" stroke-width="2.5"/>
+  <!-- Bubbles -->
+  <circle cx="44" cy="56" r="5" fill="white" stroke="#2D2D2D" stroke-width="2.5"/>
+  <circle cx="57" cy="49" r="3.5" fill="white" stroke="#2D2D2D" stroke-width="2"/>
+  <circle cx="50" cy="64" r="3" fill="white" stroke="#2D2D2D" stroke-width="2"/>
+  <!-- Neck -->
+  <rect x="40" y="10" width="20" height="27" rx="3" fill="#87CEEB" stroke="#2D2D2D" stroke-width="4"/>
+  <!-- Stopper -->
+  <rect x="37" y="5" width="26" height="9" rx="3" fill="#FFD4A3" stroke="#2D2D2D" stroke-width="3"/>
+</svg>

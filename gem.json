@@ -1,4 +1,24 @@
 {
-  "gemId": "b2004aa806f7",
-  "gemUrl": "https://gemini.google.com/gem/b2004aa806f7?usp=sharing"
+  "gems": [
+    {
+      "name": "Le Labo des P'tits Curieux",
+      "gemId": "1Md2RrlIwMWteEou0ySm_4gOFc1jxd9cM",
+      "gemUrl": "https://gemini.google.com/gem/1Md2RrlIwMWteEou0ySm_4gOFc1jxd9cM?usp=sharing"
+    },
+    {
+      "name": "Les Défis Rigolos",
+      "gemId": "1eebl1zt3WiaIp4NncsGT_9e6vvE5SoQg",
+      "gemUrl": "https://gemini.google.com/gem/1eebl1zt3WiaIp4NncsGT_9e6vvE5SoQg?usp=sharing"
+    },
+    {
+      "name": "Le Petit Détective",
+      "gemId": "1eWdB7Tq7Y5zw7FeupfmfMWCAlziKTQJO",
+      "gemUrl": "https://gemini.google.com/gem/1eWdB7Tq7Y5zw7FeupfmfMWCAlziKTQJO?usp=sharing"
+    },
+    {
+      "name": "Le Petit Coloriste",
+      "gemId": "b2004aa806f7",
+      "gemUrl": "https://gemini.google.com/gem/b2004aa806f7?usp=sharing"
+    }
+  ]
 }

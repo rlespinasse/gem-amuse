@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Lightning bolt -->
+  <polygon points="60,8 35,52 50,52 42,92 68,48 53,48" fill="#FFE66D" stroke="#2D2D2D" stroke-width="4.5" stroke-linejoin="round"/>
+  <!-- Highlight stripe -->
+  <polygon points="57,16 60,16 50,45 47,45" fill="white" opacity="0.55"/>
+</svg>
