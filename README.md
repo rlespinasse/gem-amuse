@@ -1,27 +1,23 @@
-# Le Petit Coloriste
+# Gem'Amuse
 
-Une [Gem](https://gemini.google.com) Google Gemini (assistant personnalisé) qui transforme de simples descriptions en pages de coloriage prêtes à imprimer pour les jeunes enfants (dès 5 ans). Un compte Google gratuit est nécessaire pour y accéder.
+Un site qui rassemble plusieurs [Gems](https://gemini.google.com) Google Gemini (assistants personnalisés) créées pour s'amuser et apprendre, pour les enfants et leurs parents. Un compte Google gratuit suffit pour les utiliser.
 
-[Essayer la Gem](https://gemini.google.com/gem/b2004aa806f7?usp=sharing)
+[Découvrir les Gems](https://rlespinasse.github.io/gem-amuse/)
 
-## Ce que ça fait
+## Les Gems disponibles
 
-Le Petit Coloriste génère des coloriages adaptés aux enfants avec :
+| Gem | Description |
+| --- | --- |
+| **Le Labo des P'tits Curieux** | Expériences de science simples et sans danger avec des objets de la cuisine |
+| **Les Défis Rigolos** | Petits défis physiques de 30 secondes pour bouger et rigoler |
+| **Le Petit Détective** | Chasses aux trésors à la maison pour apprendre couleurs, formes et mots |
+| **Le Petit Coloriste** | Coloriages prêts à imprimer adaptés aux jeunes enfants (traits épais, grands espaces) |
 
-- **Traits très épais** pour ne pas dépasser
-- **Grands espaces vides** adaptés aux petites mains
-- **Aucun gris ni ombre** — du blanc pur à remplir
-- **Format A4 paysage** — prêt à imprimer
+Les identifiants et URL de chaque Gem sont déclarés dans `gem.json`.
 
-Les coloriages sont générés par Google Gemini avec le modèle de génération d'image **Nao Banana 2**.
+## Premiers pas
 
-## Premier coloriage
-
-Pour découvrir comment créer votre premier coloriage en 3 étapes, rendez-vous directement sur le site : [lepetitcoloriste.rlespinasse.io](https://lepetitcoloriste.rlespinasse.io/).
-
-## Pourquoi 404.html ?
-
-Le site est hébergé sur GitHub Pages et utilise une architecture mono-page. GitHub Pages sert `404.html` comme page de secours pour toutes les routes, ce qui en fait le point d'entrée effectif. Cela évite d'avoir un `index.html` séparé et une configuration de routage.
+Pour découvrir comment utiliser une Gem en 3 étapes, rendez-vous directement sur le site : [rlespinasse.github.io/gem-amuse](https://rlespinasse.github.io/gem-amuse/).
 
 ## Développement
 
@@ -39,38 +35,47 @@ just dev       # Lancer le serveur local avec rechargement automatique
 
 ### Commandes disponibles
 
-| Commande                 | Description                                         |
-| ------------------------ | --------------------------------------------------- |
-| `just install`           | Installer les outils et les dépendances npm         |
-| `just dev`               | Servir le site en local avec rechargement auto      |
-| `just lint`              | Lancer tous les linters (HTML, CSS, JS, Markdown)   |
-| `just lint-fix`          | Corriger automatiquement les erreurs de lint        |
-| `just lint-html`         | Linter les fichiers HTML uniquement                 |
-| `just lint-css`          | Linter les fichiers CSS uniquement                  |
-| `just lint-js`           | Linter les fichiers JS uniquement                   |
-| `just lint-md`           | Linter les fichiers Markdown uniquement             |
-| `just generate-favicons` | Générer les variantes de favicon depuis le SVG      |
-| `just ci`                | Lancer toutes les vérifications CI                  |
+| Commande                         | Description                                            |
+| -------------------------------- | ------------------------------------------------------ |
+| `just install`                   | Installer les outils et les dépendances npm           |
+| `just dev`                       | Servir le site en local avec rechargement auto        |
+| `just lint`                      | Lancer tous les linters (HTML, CSS, JS, Markdown)     |
+| `just lint-fix`                  | Corriger automatiquement les erreurs de lint          |
+| `just lint-html`                 | Linter les fichiers HTML uniquement                   |
+| `just lint-css`                  | Linter les fichiers CSS uniquement                    |
+| `just lint-js`                   | Linter les fichiers JS uniquement                     |
+| `just lint-md`                   | Linter les fichiers Markdown uniquement               |
+| `just generate-favicons`         | Générer les variantes de favicon depuis le SVG        |
+| `just update-gem <old> <new>`    | Remplacer un identifiant de Gem dans tous les fichiers |
+| `just check-gem`                 | Vérifier que les URL des Gems sont accessibles        |
+| `just ci`                        | Lancer toutes les vérifications CI (lint + check-gem) |
 
 ### Structure du projet
 
 ```text
-site/               # Site statique servi par GitHub Pages
-  404.html           # Page d'accueil principale
-  app.js             # Gestion des modales et analytics
-  style.css          # Styles
-  favicon.svg        # Logo SVG (source pour la génération des favicons)
-  site.webmanifest   # Manifeste PWA
-  exemples/          # Images d'exemples de coloriages
-scripts/             # Scripts de build
-  generate-favicons.js
+site/                    # Site statique servi par GitHub Pages
+  index.html             # Page d'accueil (liste des Gems, étapes, FAQ, mentions légales)
+  404.html               # Redirection de secours vers la page d'accueil
+  app.js                 # Gestion des modales et déclencheurs analytics
+  style.css              # Styles
+  favicon.svg            # Logo SVG (source pour la génération des favicons)
+  gem-coloriste.svg      # Icône de la Gem Petit Coloriste
+  gem-defis.svg          # Icône de la Gem Défis Rigolos
+  gem-detective.svg      # Icône de la Gem Petit Détective
+  gem-labo.svg           # Icône de la Gem Labo des P'tits Curieux
+  site.webmanifest       # Manifeste PWA
+scripts/                 # Scripts de build et de maintenance
+  generate-favicons.js   # Génère les variantes PNG depuis favicon.svg
+  update-gem-url.js      # Remplace un identifiant de Gem dans le projet
+  check-gem-url.js       # Vérifie l'accessibilité des URL de Gems
+gem.json                 # Source de vérité des Gems (nom, identifiant, URL)
 ```
 
 ## Déploiement
 
 Le site est automatiquement déployé sur GitHub Pages à chaque push sur `main` via le [workflow de déploiement](.github/workflows/deploy.yml). Le répertoire `site/` est publié tel quel.
 
-Les pull requests sont vérifiées par le [workflow CI](.github/workflows/ci.yml), qui lance tous les linters.
+Les pull requests sont vérifiées par le [workflow CI](.github/workflows/ci.yml), qui lance tous les linters et vérifie les URL des Gems.
 
 ## Licence
 
