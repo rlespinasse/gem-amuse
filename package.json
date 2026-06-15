@@ -20,11 +20,11 @@
   },
   "devDependencies": {
     "browser-sync": "^3.0.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.5.0",
     "htmlhint": "^1.1.0",
     "markdownlint-cli2": "^0.22.1",
-    "sharp": "^0.34.5",
-    "stylelint": "^17.11.1",
+    "sharp": "^0.35.1",
+    "stylelint": "^17.13.0",
     "stylelint-config-standard": "^40.0.0"
   }
 }
