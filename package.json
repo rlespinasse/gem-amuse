@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "browser-sync": "^3.0.0",
-    "eslint": "^10.6.0",
+    "eslint": "^10.7.0",
     "htmlhint": "^1.1.0",
     "markdownlint-cli2": "^0.23.0",
     "sharp": "^0.35.3",
