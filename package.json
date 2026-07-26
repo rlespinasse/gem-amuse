@@ -16,7 +16,7 @@
     "lint:fix": "npm run lint:css:fix && npm run lint:js:fix && npm run lint:md:fix",
     "generate:favicons": "node scripts/generate-favicons.js",
     "update:gem": "node scripts/update-gem-url.js",
-    "check:gem": "node scripts/check-gem-url.js"
+    "check:gem": "node --max-http-header-size=65536 scripts/check-gem-url.js"
   },
   "devDependencies": {
     "browser-sync": "^3.0.0",
