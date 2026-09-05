@@ -23,7 +23,7 @@
     "eslint": "^10.9.1",
     "htmlhint": "^1.1.0",
     "markdownlint-cli2": "^0.23.2",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0"
   },
